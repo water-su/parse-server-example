@@ -24,7 +24,7 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
   emailAdapter: new SimpleMailgunAdapter({
-    apiKey: process.env.MAILGUN_KEY,
+    apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
     fromAddress: process.env.MAIL_FROM_ADDRESS
   })
