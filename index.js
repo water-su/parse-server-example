@@ -30,6 +30,12 @@ var api = new ParseServer({
       fromAddress: process.env.MAIL_FROM_ADDRESS || 'parse@example.com',
       domain: process.env.MAILGUN_DOMAIN || 'example.com',
       apiKey: process.env.MAILGUN_API_KEY || 'key-mykey',
+    },
+    customPages: {
+      invalidLink: 'http://localhost/invalid_link.html',
+      verifyEmailSuccess: 'http://localhost/verify_email_success.html',
+      choosePassword: 'http://localhost/choose_password.html',
+      passwordResetSuccess: 'http://localhost/password_reset_success.html'
     }
   }
 });
