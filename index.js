@@ -33,7 +33,7 @@ var api = new ParseServer({
       domain: process.env.MAILGUN_DOMAIN,
       fromAddress: process.env.MAIL_FROM_ADDRESS
     }
-  }
+  },
   customPages: {
     invalidLink: 'http://localhost/invalid_link.html',
     verifyEmailSuccess: 'http://localhost/verify_email_success.html',
