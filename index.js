@@ -32,12 +32,6 @@ var api = new ParseServer({
       apiKey: process.env.MAILGUN_API_KEY,
       domain: process.env.MAILGUN_DOMAIN,
       fromAddress: process.env.MAIL_FROM_ADDRESS,
-      customPages: {
-        invalidLink: 'http://localhost/invalid_link.html',
-        verifyEmailSuccess: 'http://localhost/verify_email_success.html',
-        choosePassword: 'http://localhost/choose_password.html',
-        passwordResetSuccess: 'http://localhost/password_reset_success.html'
-      }
     }
   }
 });
