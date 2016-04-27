@@ -22,17 +22,6 @@ var api = new ParseServer({
   restKey: process.env.REST_KEY,
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  },
-  verifyUserEmails: true,
-  publicServerURL: process.env.SERVER_URL,
-  appName: 'Keeprice',
-  emailAdapter: {
-    module: 'parse-server-simple-mailgun-adapter',
-    options: {
-      apiKey: process.env.MAILGUN_API_KEY,
-      domain: process.env.MAILGUN_DOMAIN,
-      fromAddress: process.env.MAIL_FROM_ADDRESS,
-    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
