@@ -20,7 +20,7 @@ var api = new ParseServer({
   clientKey: process.env.CLIENT_KEY,
   javascriptKey: process.env.JS_KEY,
   restKey: process.env.REST_KEY,
-
+  // mail setting
   verifyUserEmails: true,
   publicServerURL: process.env.SERVER_URL || 'https://example.com',
   appName: 'keeprice',
@@ -31,7 +31,11 @@ var api = new ParseServer({
       domain: process.env.MAILGUN_DOMAIN || 'example.com',
       apiKey: process.env.MAILGUN_API_KEY || 'key-mykey',
     }
-  }
+  },
+  enableAnonymousUsers: true,
+  revokeSessionOnPasswordReset: true, //need re-login after passwd change
+  // need be disable on production
+  allowClientClassCreation: true,
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
