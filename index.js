@@ -41,7 +41,7 @@ var api = new ParseServer({
   filesAdapter: new S3Adapter(
     process.env.S3_ACCESS_KEY,
     process.env.S3_SECRET_KEY,
-    process.env.S3_BUCKET,
+    bucket: process.env.S3_BUCKET,
     {
       directAccess: true,
       region: process.env.S3_REGION,
