@@ -21,7 +21,7 @@ var api = new ParseServer({
   javascriptKey: process.env.JS_KEY,
   restKey: process.env.REST_KEY,
   // mail setting
-  verifyUserEmails: true,
+  verifyUserEmails: false,
   publicServerURL: process.env.SERVER_URL || 'https://example.com',
   appName: 'keeprice',
   emailAdapter: {
@@ -37,6 +37,15 @@ var api = new ParseServer({
   // need be disable on production
   allowClientClassCreation: true,
   facebookAppIds:[process.env.FB_APP_ID],
+  filesAdapter: new S3Adapter(
+    process.env.S3_ACCESS_KEY,
+    process.env.S3_SECRET_KEY,
+    process.env.S3_BUCKET,
+    {
+      directAccess: true,
+      region:process.env.S3_REGION,
+    }
+  ),
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
